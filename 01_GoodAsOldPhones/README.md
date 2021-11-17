@@ -1,5 +1,5 @@
 # 스크린샷
-![Simulator Screen Recording - iPhone 11 - 2021-11-17 at 21 41 35](https://user-images.githubusercontent.com/31765530/142202707-56c12d3d-6d7f-473a-8c0b-a7cb8906e25d.gif)
+![1](https://github.com/hhhan0315/Swift-30-Projects/blob/main/01_GoodAsOldPhones/1.gif)
 
 # 스토리보드 삭제 및 SceneDelegate 설정
 ```swift
