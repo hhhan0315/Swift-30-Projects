@@ -13,6 +13,8 @@ class StopwatchViewController: UIViewController {
     private let defaultLightGray: UIColor = UIColor(red: 0.969, green: 0.969, blue: 0.969, alpha: 1.0)
     private let buttonSize: CGFloat = 80
     
+    private let stopwatch = Stopwatch()
+    
     private let clockView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,14 +57,14 @@ class StopwatchViewController: UIViewController {
         return button
     }()
     
-    private lazy var startButton: UIButton = {
+    private lazy var startStopButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start", for: .normal)
         button.setTitleColor(.green, for: .normal)
         button.layer.cornerRadius = buttonSize / 2
         button.backgroundColor = .white
-        button.addTarget(self, action: #selector(touchStartButton(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(touchStartStopButton(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -72,7 +74,7 @@ class StopwatchViewController: UIViewController {
         tableView.backgroundColor = defaultLightGray
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -107,17 +109,17 @@ class StopwatchViewController: UIViewController {
         ])
         
         buttonView.addSubview(lapButton)
-        buttonView.addSubview(startButton)
+        buttonView.addSubview(startStopButton)
         NSLayoutConstraint.activate([
             lapButton.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor),
             lapButton.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor, constant: -buttonSize),
             lapButton.widthAnchor.constraint(equalToConstant: buttonSize),
             lapButton.heightAnchor.constraint(equalToConstant: buttonSize),
             
-            startButton.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor),
-            startButton.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor, constant: buttonSize),
-            startButton.widthAnchor.constraint(equalToConstant: buttonSize),
-            startButton.heightAnchor.constraint(equalToConstant: buttonSize),
+            startStopButton.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor),
+            startStopButton.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor, constant: buttonSize),
+            startStopButton.widthAnchor.constraint(equalToConstant: buttonSize),
+            startStopButton.heightAnchor.constraint(equalToConstant: buttonSize),
         ])
         
         view.addSubview(tableView)
@@ -130,11 +132,33 @@ class StopwatchViewController: UIViewController {
     }
 
     @objc func touchLapButton(_ sender: UIButton) {
-        print("lap")
     }
     
-    @objc func touchStartButton(_ sender: UIButton) {
-        print("start")
+    @objc func touchStartStopButton(_ sender: UIButton) {
+        if stopwatch.isCounting {
+            stopwatch.timer.invalidate()
+            stopwatch.isCounting = false
+            startStopButton.setTitle("Start", for: .normal)
+            startStopButton.setTitleColor(.green, for: .normal)
+        } else {
+            stopwatch.timer = Timer.scheduledTimer(timeInterval: 0.035, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            stopwatch.isCounting = true
+            startStopButton.setTitle("Stop", for: .normal)
+            startStopButton.setTitleColor(.red, for: .normal)
+        }
+        
+    }
+    
+    @objc func updateTimer() {
+        stopwatch.count += 0.035
+        let minute = Int(stopwatch.count / 60)
+        let textMinute = minute < 10 ? "0\(minute)" : "\(minute)"
+        
+        // double형에서는 % 사용 못함
+        let second = stopwatch.count.truncatingRemainder(dividingBy: 60)
+        let textSecond = second < 10 ? "0\(String(format: "%.2f", second))" : "\(String(format: "%.2f", second))"
+        bigTimeLabel.text = textMinute + ":" + textSecond
+        
     }
 }
 
