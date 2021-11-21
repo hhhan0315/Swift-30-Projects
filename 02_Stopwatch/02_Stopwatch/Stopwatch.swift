@@ -10,11 +10,9 @@ import UIKit
 class Stopwatch {
     var timer: Timer
     var count: Double
-    var isCounting: Bool
     
     init() {
         timer = Timer()
         count = 0.0
-        isCounting = false
     }
 }

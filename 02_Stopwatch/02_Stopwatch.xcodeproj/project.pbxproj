@@ -13,6 +13,7 @@
 		01894046274696CD006D98B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01894045274696CD006D98B0 /* Assets.xcassets */; };
 		01894049274696CD006D98B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01894047274696CD006D98B0 /* LaunchScreen.storyboard */; };
 		0189405227491DA4006D98B0 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189405127491DA4006D98B0 /* Stopwatch.swift */; };
+		01894054274A1C9F006D98B0 /* LapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01894053274A1C9F006D98B0 /* LapTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		01894048274696CD006D98B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0189404A274696CD006D98B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0189405127491DA4006D98B0 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		01894053274A1C9F006D98B0 /* LapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				01894050274696EC006D98B0 /* Supporting Files */,
 				01894040274696CB006D98B0 /* StopwatchViewController.swift */,
 				0189405127491DA4006D98B0 /* Stopwatch.swift */,
+				01894053274A1C9F006D98B0 /* LapTableViewCell.swift */,
 				0189404A274696CD006D98B0 /* Info.plist */,
 			);
 			path = 02_Stopwatch;
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01894041274696CB006D98B0 /* StopwatchViewController.swift in Sources */,
+				01894054274A1C9F006D98B0 /* LapTableViewCell.swift in Sources */,
 				0189403D274696CB006D98B0 /* AppDelegate.swift in Sources */,
 				0189403F274696CB006D98B0 /* SceneDelegate.swift in Sources */,
 				0189405227491DA4006D98B0 /* Stopwatch.swift in Sources */,
