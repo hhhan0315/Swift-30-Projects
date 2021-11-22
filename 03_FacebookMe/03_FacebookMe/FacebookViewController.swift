@@ -14,6 +14,7 @@ class FacebookViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(FacebookTableViewCell.self, forCellReuseIdentifier: FacebookTableViewCell.identifier)
         return tableView
     }()
 
@@ -37,6 +38,12 @@ class FacebookViewController: UIViewController {
         ])
     }
     
+    func getRows(section: Int) -> [[String:String]] {
+        guard let rows = TableKeys.testData[section][TableKeys.Rows] as? [[String:String]] else {
+            fatalError("Unable rows")
+        }
+        return rows
+    }
 }
 
 extension FacebookViewController: UITableViewDelegate, UITableViewDataSource {
@@ -52,15 +59,45 @@ extension FacebookViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let rows = TableKeys.testData[section][TableKeys.Rows] as? [[String:String]] else {
-            return 0
-        }
-
-        return rows.count
+        return getRows(section: section).count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(style: .default, reuseIdentifier: "Z")
+        var cell = UITableViewCell()
+        let rows = getRows(section: indexPath.section)
+        let title = rows[indexPath.row][TableKeys.Title]
+        let userName = "BayMax"
+        
+        if title == userName {
+            cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: nil)
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: FacebookTableViewCell.identifier, for: indexPath)
+        }
+        
+        switch title {
+        case TableKeys.seeMore, TableKeys.addFavorites:
+            if let imageName = rows[indexPath.row][TableKeys.ImageName] {
+                cell.imageView?.image = UIImage(named: imageName)
+            }
+            cell.textLabel?.text = title
+            cell.textLabel?.textColor = .blue.withAlphaComponent(0.5)
+        case TableKeys.logOut:
+            cell.textLabel?.text = title
+            cell.textLabel?.textColor = .red
+            cell.textLabel?.textAlignment = .center
+        default:
+            if let imageName = rows[indexPath.row][TableKeys.ImageName] {
+                cell.imageView?.image = UIImage(named: imageName)
+            }
+            cell.textLabel?.text = title
+            cell.accessoryType = .disclosureIndicator
+            
+            if title == userName {
+                cell.detailTextLabel?.text = rows[indexPath.row][TableKeys.SubTitle]
+            }
+        }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

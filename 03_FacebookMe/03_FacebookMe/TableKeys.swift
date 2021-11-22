@@ -31,13 +31,13 @@ struct TableKeys {
                 [TableKeys.ImageName: "fb_education", TableKeys.Title: "Education"],
                 [TableKeys.ImageName: "fb_town_hall", TableKeys.Title: "Town Hall"],
                 [TableKeys.ImageName: "fb_games", TableKeys.Title: "Instant Games"],
-                [TableKeys.Title: TableKeys.seeMore],
+                [TableKeys.ImageName: "fb_placeholder", TableKeys.Title: TableKeys.seeMore],
             ]
         ],
         [
             TableKeys.Section: "FAVORITES",
             TableKeys.Rows: [
-                [TableKeys.Title: TableKeys.addFavorites]
+                [TableKeys.ImageName: "fb_placeholder",TableKeys.Title: TableKeys.addFavorites]
             ]
         ],
         [
