@@ -6,3 +6,5 @@
 |[1. GoodAsOldPhones](https://github.com/hhhan0315/Swift-30-Projects/tree/main/01_GoodAsOldPhones)|[2. Stopwatch](https://github.com/hhhan0315/Swift-30-Projects/tree/main/02_Stopwatch)|
 |--|--|
 |![1](https://github.com/hhhan0315/Swift-30-Projects/blob/main/01_GoodAsOldPhones/1.gif)|![2](https://github.com/hhhan0315/Swift-30-Projects/blob/main/02_Stopwatch/2.gif)|
+|[3. FacebookMe](https://github.com/hhhan0315/Swift-30-Projects/tree/main/03_FacebookMe)||
+|![3](https://github.com/hhhan0315/Swift-30-Projects/blob/main/03_FacebookMe/3.gif)||
