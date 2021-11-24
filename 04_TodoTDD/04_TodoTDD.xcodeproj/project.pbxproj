@@ -13,6 +13,13 @@
 		01894095274CC0DA006D98B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01894093274CC0DA006D98B0 /* LaunchScreen.storyboard */; };
 		0189409E274CC72E006D98B0 /* TodoHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189409D274CC72E006D98B0 /* TodoHomeViewController.swift */; };
 		018940A0274CC8C8006D98B0 /* TodoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0189409F274CC8C8006D98B0 /* TodoAddViewController.swift */; };
+		018940A2274D186D006D98B0 /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940A1274D186D006D98B0 /* TodoDetailViewController.swift */; };
+		018940A5274D1C38006D98B0 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 018940A3274D1C38006D98B0 /* Model.xcdatamodeld */; };
+		018940A7274D1FA8006D98B0 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940A6274D1FA8006D98B0 /* Todo.swift */; };
+		018940AA274E2B20006D98B0 /* TodoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940A8274E2B20006D98B0 /* TodoEntity+CoreDataClass.swift */; };
+		018940AB274E2B20006D98B0 /* TodoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940A9274E2B20006D98B0 /* TodoEntity+CoreDataProperties.swift */; };
+		018940AD274E52CD006D98B0 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940AC274E52CD006D98B0 /* PersistenceManager.swift */; };
+		018940AF274E5FBE006D98B0 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940AE274E5FBE006D98B0 /* TodoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		01894096274CC0DA006D98B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0189409D274CC72E006D98B0 /* TodoHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoHomeViewController.swift; sourceTree = "<group>"; };
 		0189409F274CC8C8006D98B0 /* TodoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddViewController.swift; sourceTree = "<group>"; };
+		018940A1274D186D006D98B0 /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		018940A4274D1C38006D98B0 /* TodoCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoCoreData.xcdatamodel; sourceTree = "<group>"; };
+		018940A6274D1FA8006D98B0 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		018940A8274E2B20006D98B0 /* TodoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		018940A9274E2B20006D98B0 /* TodoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		018940AC274E52CD006D98B0 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		018940AE274E5FBE006D98B0 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +54,8 @@
 		0189407C274CC0D8006D98B0 = {
 			isa = PBXGroup;
 			children = (
+				018940A8274E2B20006D98B0 /* TodoEntity+CoreDataClass.swift */,
+				018940A9274E2B20006D98B0 /* TodoEntity+CoreDataProperties.swift */,
 				01894087274CC0D8006D98B0 /* 04_TodoTDD */,
 				01894086274CC0D8006D98B0 /* Products */,
 			);
@@ -58,8 +74,13 @@
 			children = (
 				0189409C274CC0F7006D98B0 /* Supporting Files */,
 				01894096274CC0DA006D98B0 /* Info.plist */,
+				018940A6274D1FA8006D98B0 /* Todo.swift */,
+				018940AE274E5FBE006D98B0 /* TodoTableViewCell.swift */,
 				0189409D274CC72E006D98B0 /* TodoHomeViewController.swift */,
 				0189409F274CC8C8006D98B0 /* TodoAddViewController.swift */,
+				018940A1274D186D006D98B0 /* TodoDetailViewController.swift */,
+				018940AC274E52CD006D98B0 /* PersistenceManager.swift */,
+				018940A3274D1C38006D98B0 /* Model.xcdatamodeld */,
 			);
 			path = 04_TodoTDD;
 			sourceTree = "<group>";
@@ -144,9 +165,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018940AA274E2B20006D98B0 /* TodoEntity+CoreDataClass.swift in Sources */,
+				018940AD274E52CD006D98B0 /* PersistenceManager.swift in Sources */,
+				018940A7274D1FA8006D98B0 /* Todo.swift in Sources */,
 				018940A0274CC8C8006D98B0 /* TodoAddViewController.swift in Sources */,
+				018940A2274D186D006D98B0 /* TodoDetailViewController.swift in Sources */,
+				018940A5274D1C38006D98B0 /* Model.xcdatamodeld in Sources */,
 				01894089274CC0D8006D98B0 /* AppDelegate.swift in Sources */,
+				018940AF274E5FBE006D98B0 /* TodoTableViewCell.swift in Sources */,
 				0189409E274CC72E006D98B0 /* TodoHomeViewController.swift in Sources */,
+				018940AB274E2B20006D98B0 /* TodoEntity+CoreDataProperties.swift in Sources */,
 				0189408B274CC0D8006D98B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +369,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		018940A3274D1C38006D98B0 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				018940A4274D1C38006D98B0 /* TodoCoreData.xcdatamodel */,
+			);
+			currentVersion = 018940A4274D1C38006D98B0 /* TodoCoreData.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0189407D274CC0D8006D98B0 /* Project object */;
 }

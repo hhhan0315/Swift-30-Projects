@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoAddViewController: UIViewController {
     let textFieldMultiplier: CGFloat = 1/2
@@ -15,6 +16,7 @@ class TodoAddViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Title"
         textField.borderStyle = .roundedRect
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return textField
     }()
     
@@ -23,6 +25,7 @@ class TodoAddViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Address"
         textField.borderStyle = .roundedRect
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return textField
     }()
     
@@ -31,6 +34,7 @@ class TodoAddViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Description"
         textField.borderStyle = .roundedRect
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         return textField
     }()
     
@@ -54,7 +58,7 @@ class TodoAddViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cancel", for: .normal)
         button.setTitleColor(.red, for: .normal)
-        button.addTarget(self, action: #selector(touchCancelButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(touchCancelButton(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -62,7 +66,9 @@ class TodoAddViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Save", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
+        button.isEnabled = false
+        button.setTitleColor(.lightGray, for: .normal)
+        button.addTarget(self, action: #selector(touchSaveButton(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -120,10 +126,58 @@ class TodoAddViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
 
-    @objc func touchCancelButton() {
+    @objc func touchCancelButton(_ button: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func touchSaveButton(_ button: UIButton) {
+        let context = PersistenceManager.shared.context
+        let entity = NSEntityDescription.entity(forEntityName: "TodoEntity", in: context)
+        
+        if let entity = entity {
+            let todoObject = NSManagedObject(entity: entity, insertInto: context)
+            
+            guard let titleText = titleTextField.text else { return }
+            guard let addressText = addressTextField.text else { return }
+            guard let descText = descTextField.text else { return }
+            
+            let todo = Todo(title: titleText, address: addressText, desc: descText)
+            todoObject.setValue(todo.title, forKey: "title")
+            todoObject.setValue(todo.address, forKey: "address")
+            todoObject.setValue(todo.desc, forKey: "desc")
+            
+            do {
+                try context.save()
+                navigationController?.popViewController(animated: true)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    func checkTextFieldsIsNotEmpty() -> Bool {
+        guard let titleText = titleTextField.text else { return false }
+        guard let addressText = addressTextField.text else { return false }
+        guard let descText = descTextField.text else { return false }
+        if titleText.isEmpty || addressText.isEmpty || descText.isEmpty {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if checkTextFieldsIsNotEmpty() {
+            saveButton.isEnabled = true
+            saveButton.setTitleColor(.systemBlue, for: .normal)
+        } else {
+            saveButton.isEnabled = false
+            saveButton.setTitleColor(.lightGray, for: .normal)
+        }
     }
 }
