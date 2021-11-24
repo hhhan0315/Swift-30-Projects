@@ -135,29 +135,19 @@ class TodoAddViewController: UIViewController {
     }
     
     @objc func touchSaveButton(_ button: UIButton) {
-        let context = PersistenceManager.shared.context
-        let entity = NSEntityDescription.entity(forEntityName: "TodoEntity", in: context)
+        guard let titleText = titleTextField.text else { return }
+        guard let addressText = addressTextField.text else { return }
+        guard let descText = descTextField.text else { return }
         
-        if let entity = entity {
-            let todoObject = NSManagedObject(entity: entity, insertInto: context)
-            
-            guard let titleText = titleTextField.text else { return }
-            guard let addressText = addressTextField.text else { return }
-            guard let descText = descTextField.text else { return }
-            
-            let todo = Todo(title: titleText, address: addressText, desc: descText)
-            todoObject.setValue(todo.title, forKey: "title")
-            todoObject.setValue(todo.address, forKey: "address")
-            todoObject.setValue(todo.desc, forKey: "desc")
-            
-            do {
-                try context.save()
-                navigationController?.popViewController(animated: true)
-            } catch {
-                print(error.localizedDescription)
-            }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        let timeText = formatter.string(from: datePicker.date)
+
+        let todo = Todo(title: titleText, address: addressText, desc: descText, date: timeText)
+        
+        if PersistenceManager.shared.insertTodo(todo: todo) {
+            navigationController?.popViewController(animated: true)
         }
-        
     }
     
     func checkTextFieldsIsNotEmpty() -> Bool {

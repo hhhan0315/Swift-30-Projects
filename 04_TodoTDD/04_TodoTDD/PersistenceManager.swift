@@ -44,6 +44,7 @@ class PersistenceManager {
             managedObject.setValue(todo.title, forKey: "title")
             managedObject.setValue(todo.address, forKey: "address")
             managedObject.setValue(todo.desc, forKey: "desc")
+            managedObject.setValue(todo.date, forKey: "date")
             
             do {
                 try self.context.save()

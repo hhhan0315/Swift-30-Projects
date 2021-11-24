@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="TodoEntity" representedClassName="TodoEntity" syncable="YES">
+    <entity name="TodoEntity" representedClassName="TodoEntity" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TodoEntity" positionX="-1428.484375" positionY="-529.77734375" width="128" height="88"/>
+        <element name="TodoEntity" positionX="-1428.484375" positionY="-529.77734375" width="128" height="103"/>
     </elements>
 </model>

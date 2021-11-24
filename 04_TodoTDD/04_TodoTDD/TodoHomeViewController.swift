@@ -16,8 +16,11 @@ class TodoHomeViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.register(TodoTableViewCell.self, forCellReuseIdentifier: TodoTableViewCell.identifier)
+        tableView.rowHeight = 100
         return tableView
     }()
+    
+    private var todoData: [TodoEntity] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,8 @@ class TodoHomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateTodoData()
+        tableView.reloadData()
     }
     
     func setViews() {
@@ -46,20 +51,24 @@ class TodoHomeViewController: UIViewController {
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    func updateTodoData() {
+        todoData = PersistenceManager.shared.fetch(request: TodoEntity.fetchRequest())
+    }
 }
 
 extension TodoHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let fetchResult = PersistenceManager.shared.fetch(request: TodoEntity.fetchRequest())
-        return fetchResult.count
+        return todoData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TodoTableViewCell.identifier, for: indexPath) as? TodoTableViewCell else {
             fatalError("Unable dequeue TodoCell")
         }
-        let fetchResult = PersistenceManager.shared.fetch(request: TodoEntity.fetchRequest())
-        cell.textLabel?.text = fetchResult[indexPath.row].title
+ 
+        cell.titleLabel.text = todoData[indexPath.row].title
+        cell.addressLabel.text = todoData[indexPath.row].address
+        cell.timeLabel.text = todoData[indexPath.row].date
         
         return cell
     }
@@ -68,5 +77,25 @@ extension TodoHomeViewController: UITableViewDataSource {
 extension TodoHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let todo = todoData[indexPath.row]
+        
+        let nextVC = TodoDetailViewController()
+        nextVC.todo = todo
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if PersistenceManager.shared.remove(object: todoData[indexPath.row]) == true {
+                updateTodoData()
+                tableView.reloadData()
+            }
+        }
     }
 }

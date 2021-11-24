@@ -11,5 +11,6 @@ struct Todo {
     var title: String
     var address: String
     var desc: String
+    var date: String
 }
 
