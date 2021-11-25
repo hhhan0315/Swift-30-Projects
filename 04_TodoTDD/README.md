@@ -76,3 +76,7 @@ func checkTextFieldsIsNotEmpty() -> Bool {
 # UITest
 ![uitest](https://github.com/hhhan0315/Swift-30-Projects/blob/main/04_TodoTDD/4_uitest.gif)
 - 직접 입력했을 때 시간이 오래걸렸는데 상당히 유용했다.
+
+참고
+- [zeddios - UnitTest](https://zeddios.tistory.com/48)
+- [zeddios - UITest](https://zeddios.tistory.com/1061)
