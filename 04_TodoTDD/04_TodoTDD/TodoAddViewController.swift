@@ -11,30 +11,33 @@ import CoreData
 class TodoAddViewController: UIViewController {
     let textFieldMultiplier: CGFloat = 1/2
     
-    private let titleTextField: UITextField = {
+    private lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Title"
         textField.borderStyle = .roundedRect
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        textField.delegate = self
         return textField
     }()
     
-    private let addressTextField: UITextField = {
+    private lazy var addressTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Address"
         textField.borderStyle = .roundedRect
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        textField.delegate = self
         return textField
     }()
     
-    private let descTextField: UITextField = {
+    private lazy var descTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Description"
         textField.borderStyle = .roundedRect
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        textField.delegate = self
         return textField
     }()
     
@@ -169,5 +172,13 @@ class TodoAddViewController: UIViewController {
             saveButton.isEnabled = false
             saveButton.setTitleColor(.lightGray, for: .normal)
         }
+    }
+    
+}
+
+extension TodoAddViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
