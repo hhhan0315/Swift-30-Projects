@@ -15,7 +15,10 @@
 		018940F42755023B006D98B0 /* artists.json in Resources */ = {isa = PBXBuildFile; fileRef = 018940F32755023B006D98B0 /* artists.json */; };
 		018940F627550478006D98B0 /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940F527550478006D98B0 /* ArtistTableViewCell.swift */; };
 		018940F8275504D5006D98B0 /* WorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940F7275504D5006D98B0 /* WorkTableViewCell.swift */; };
-		018940FA27550500006D98B0 /* ArtistWorkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940F927550500006D98B0 /* ArtistWorkListViewController.swift */; };
+		018940FA27550500006D98B0 /* ArtistDetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940F927550500006D98B0 /* ArtistDetailListViewController.swift */; };
+		018940FC27551A26006D98B0 /* ArtistsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940FB27551A26006D98B0 /* ArtistsJson.swift */; };
+		018940FE27551AE1006D98B0 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940FD27551AE1006D98B0 /* Work.swift */; };
+		0189410027551CAC006D98B0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018940FF27551CAC006D98B0 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		018940F32755023B006D98B0 /* artists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = artists.json; sourceTree = "<group>"; };
 		018940F527550478006D98B0 /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		018940F7275504D5006D98B0 /* WorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTableViewCell.swift; sourceTree = "<group>"; };
-		018940F927550500006D98B0 /* ArtistWorkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistWorkListViewController.swift; sourceTree = "<group>"; };
+		018940F927550500006D98B0 /* ArtistDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailListViewController.swift; sourceTree = "<group>"; };
+		018940FB27551A26006D98B0 /* ArtistsJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsJson.swift; sourceTree = "<group>"; };
+		018940FD27551AE1006D98B0 /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		018940FF27551CAC006D98B0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +92,9 @@
 		018940F02754B3E0006D98B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				018940F527550478006D98B0 /* ArtistTableViewCell.swift */,
-				018940F7275504D5006D98B0 /* WorkTableViewCell.swift */,
+				018940FB27551A26006D98B0 /* ArtistsJson.swift */,
+				018940FF27551CAC006D98B0 /* Artist.swift */,
+				018940FD27551AE1006D98B0 /* Work.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +102,8 @@
 		018940F12754B3EB006D98B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				018940F527550478006D98B0 /* ArtistTableViewCell.swift */,
+				018940F7275504D5006D98B0 /* WorkTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				018940DF2754B377006D98B0 /* ArtistListViewController.swift */,
-				018940F927550500006D98B0 /* ArtistWorkListViewController.swift */,
+				018940F927550500006D98B0 /* ArtistDetailListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,12 +187,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018940FE27551AE1006D98B0 /* Work.swift in Sources */,
 				018940E02754B377006D98B0 /* ArtistListViewController.swift in Sources */,
 				018940DC2754B377006D98B0 /* AppDelegate.swift in Sources */,
-				018940FA27550500006D98B0 /* ArtistWorkListViewController.swift in Sources */,
+				0189410027551CAC006D98B0 /* Artist.swift in Sources */,
+				018940FA27550500006D98B0 /* ArtistDetailListViewController.swift in Sources */,
 				018940F8275504D5006D98B0 /* WorkTableViewCell.swift in Sources */,
 				018940F627550478006D98B0 /* ArtistTableViewCell.swift in Sources */,
 				018940DE2754B377006D98B0 /* SceneDelegate.swift in Sources */,
+				018940FC27551A26006D98B0 /* ArtistsJson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
