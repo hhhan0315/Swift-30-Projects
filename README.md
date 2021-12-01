@@ -10,3 +10,7 @@
 |[3. FacebookMe](https://github.com/hhhan0315/Swift-30-Projects/tree/main/03_FacebookMe)|[4. TodoTDD](https://github.com/hhhan0315/Swift-30-Projects/tree/main/04_TodoTDD)|
 |--|--|
 |![3](https://github.com/hhhan0315/Swift-30-Projects/blob/main/03_FacebookMe/3.gif)|![4](https://github.com/hhhan0315/Swift-30-Projects/blob/main/04_TodoTDD/4.gif)|
+
+|[5. Artistry](https://github.com/hhhan0315/Swift-30-Projects/tree/main/05_Artistry)||
+|--|--|
+|![5](https://github.com/hhhan0315/Swift-30-Projects/blob/main/05_Artistry/5.gif)||
