@@ -11,5 +11,5 @@ struct Artist: Codable {
     let name: String
     let bio: String
     let image: String
-    let works: [Work]
+    var works: [Work]
 }

@@ -11,12 +11,11 @@ class WorkTableViewCell: UITableViewCell {
 
     static let identifier = "WorkCell"
         
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
-    }
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-
 }

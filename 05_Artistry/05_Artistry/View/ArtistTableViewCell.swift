@@ -10,13 +10,12 @@ import UIKit
 class ArtistTableViewCell: UITableViewCell {
 
     static let identifier = "ArtistCell"
-        
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+    
+    @IBOutlet weak var mainImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
 }

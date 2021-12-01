@@ -1,4 +1,3 @@
-//
 //  ArtistListViewController.swift
 //  05_Artistry
 //
@@ -11,9 +10,17 @@ class ArtistListViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        let cellNib = UINib(nibName: String(describing: ArtistTableViewCell.self), bundle: nil)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ArtistTableViewCell.self, forCellReuseIdentifier: ArtistTableViewCell.identifier)
+        tableView.register(cellNib, forCellReuseIdentifier: ArtistTableViewCell.identifier)
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 120
+        tableView.separatorColor = .darkGray
+        tableView.separatorInset.left = 0
+        tableView.separatorInset.right = 0
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     
@@ -39,8 +46,9 @@ class ArtistListViewController: UIViewController {
             .font:UIFont.systemFont(ofSize: 24, weight: .semibold)
         ]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        navigationController?.navigationBar.topItem?.title = "Artistry"
+        navigationItem.title = "Artistry"
         navigationController?.navigationBar.barTintColor = .systemGreen
+        navigationController?.navigationBar.tintColor = .white
     }
 
     private func addViews() {
@@ -51,8 +59,8 @@ class ArtistListViewController: UIViewController {
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: guide.topAnchor),
-            tableView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
     }
@@ -74,9 +82,27 @@ extension ArtistListViewController: UITableViewDataSource {
         guard let artistsJson = artistsJson else {
             return cell
         }
-        
-        cell.textLabel?.text = artistsJson.artists[indexPath.row].bio
+        let artist = artistsJson.artists[indexPath.row]
+
+        cell.mainImageView.image = UIImage(named: artist.image)
+        cell.nameLabel.text = artist.name
+        cell.bioLabel.text = artist.bio
         
         return cell
+    }
+}
+
+extension ArtistListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let artistsJson = artistsJson else {
+            return
+        }
+        let artist = artistsJson.artists[indexPath.row]
+        
+        let nextVC = ArtistDetailListViewController()
+        nextVC.artist = artist
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
