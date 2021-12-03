@@ -13,4 +13,4 @@
 
 |[5. Artistry](https://github.com/hhhan0315/Swift-30-Projects/tree/main/05_Artistry)|[6. CandySearch](https://github.com/hhhan0315/Swift-30-Projects/tree/develop/06_CandySearch)|
 |--|--|
-|![5](https://github.com/hhhan0315/Swift-30-Projects/blob/main/05_Artistry/5.gif)|![6](https://github.com/hhhan0315/Swift-30-Projects/blob/develop/06_CandySearch/6.gif)|
+|![5](https://github.com/hhhan0315/Swift-30-Projects/blob/main/05_Artistry/5.gif)|![6](https://github.com/hhhan0315/Swift-30-Projects/blob/main/06_CandySearch/6.gif)|
