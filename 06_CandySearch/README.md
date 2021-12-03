@@ -1,5 +1,5 @@
 # 스크린샷
-![6](https://github.com/hhhan0315/Swift-30-Projects/blob/develop/06_CandySearch/6.gif)
+![6](https://github.com/hhhan0315/Swift-30-Projects/blob/main/06_CandySearch/6.gif)
 
 참고 : https://www.raywenderlich.com/4363809-uisearchcontroller-tutorial-getting-started#toc-anchor-010
 
@@ -9,7 +9,7 @@
 ## obscuresBackgroundDuringPresentation
 |true|false|
 |--|--|
-|![true](https://github.com/hhhan0315/Swift-30-Projects/blob/develop/06_CandySearch/obscures_true.png)|![false](https://github.com/hhhan0315/Swift-30-Projects/blob/develop/06_CandySearch/obscures_false.png)|
+|![true](https://github.com/hhhan0315/Swift-30-Projects/blob/main/06_CandySearch/obscures_true.png)|![false](https://github.com/hhhan0315/Swift-30-Projects/blob/main/06_CandySearch/obscures_false.png)|
 
 - 검색할 때 배경을 흐리게할지 선택
 
@@ -40,7 +40,7 @@ extension CandyHomeViewController: UITableViewDelegate {
 }
 ```
 
-<img src="https://github.com/hhhan0315/Swift-30-Projects/blob/develop/06_CandySearch/defines.png" width=300>
+<img src="https://github.com/hhhan0315/Swift-30-Projects/blob/main/06_CandySearch/defines.png" width=300>
 
 - rootViewController가 Navigation Controller라서 Navigation Bar가 남아있다.
 
