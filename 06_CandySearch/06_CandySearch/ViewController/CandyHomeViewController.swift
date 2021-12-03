@@ -15,10 +15,30 @@ class CandyHomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CandyHomeTableViewCell.self, forCellReuseIdentifier: CandyHomeTableViewCell.identifier)
+        tableView.tableFooterView = searchFooterView
         return tableView
     }()
     
     private let candies = Candy.testData
+    
+    private var filteredCandies = [Candy]()
+    
+    private lazy var searchFooterView: SearchFooterView = {
+        let searchFooterView = SearchFooterView()
+        searchFooterView.translatesAutoresizingMaskIntoConstraints = false
+        searchFooterView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 44.0)
+        return searchFooterView
+    }()
+    
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.scopeButtonTitles = ["All", "Chocolate", "Hard", "Other"]
+        searchController.searchBar.delegate = self
+        return searchController
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +47,10 @@ class CandyHomeViewController: UIViewController {
         setNavigationController()
         addViews()
         autoLayout()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
     private func setNavigationController() {
@@ -37,6 +61,8 @@ class CandyHomeViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
         navigationController?.navigationBar.barTintColor = .systemGreen
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 
     private func addViews() {
@@ -51,10 +77,37 @@ class CandyHomeViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    
+    private func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    private func filteredContentForSearchText(_ searchText: String, scope: String = "All") {
+        filteredCandies = candies.filter { (candy: Candy) -> Bool in
+            let doesCategoryMatch = (scope == "All") || (candy.category == scope)
+            
+            if searchBarIsEmpty() {
+                return doesCategoryMatch
+            } else {
+                return doesCategoryMatch && candy.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    private func isFiltering() -> Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
+    }
 }
 
 extension CandyHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering() {
+            searchFooterView.setIsFilteringToShow(filteredItemCount: filteredCandies.count, of: candies.count)
+            return filteredCandies.count
+        }
+        searchFooterView.setNotFiltering()
         return candies.count
     }
     
@@ -62,9 +115,16 @@ extension CandyHomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CandyHomeTableViewCell.identifier, for: indexPath) as? CandyHomeTableViewCell else {
             fatalError("Unable dequeue CandyHomeCell")
         }
+        let candy: Candy
         
-        cell.textLabel?.text = candies[indexPath.row].name
-        cell.detailTextLabel?.text = candies[indexPath.row].category
+        if isFiltering() {
+            candy = filteredCandies[indexPath.row]
+        } else {
+            candy = candies[indexPath.row]
+        }
+        
+        cell.textLabel?.text = candy.name
+        cell.detailTextLabel?.text = candy.category
         
         return cell
     }
@@ -74,10 +134,30 @@ extension CandyHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let candy = candies[indexPath.row]
+        let candy: Candy
+        
+        if isFiltering() {
+            candy = filteredCandies[indexPath.row]
+        } else {
+            candy = candies[indexPath.row]
+        }
         
         let nextVC = CandyDetailViewController()
         nextVC.candy = candy
         navigationController?.pushViewController(nextVC, animated: true)
+    }
+}
+
+extension CandyHomeViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        filteredContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+extension CandyHomeViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        filteredContentForSearchText(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
     }
 }

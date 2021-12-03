@@ -15,6 +15,7 @@
 		01E5D604275911ED00C84FA5 /* CandyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D603275911ED00C84FA5 /* CandyDetailViewController.swift */; };
 		01E5D606275912A800C84FA5 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D605275912A800C84FA5 /* Candy.swift */; };
 		01E5D60A2759ACDE00C84FA5 /* CandyHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D6092759ACDE00C84FA5 /* CandyHomeTableViewCell.swift */; };
+		01E5D60D275A357A00C84FA5 /* SearchFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D60C275A357A00C84FA5 /* SearchFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		01E5D603275911ED00C84FA5 /* CandyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyDetailViewController.swift; sourceTree = "<group>"; };
 		01E5D605275912A800C84FA5 /* Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
 		01E5D6092759ACDE00C84FA5 /* CandyHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyHomeTableViewCell.swift; sourceTree = "<group>"; };
+		01E5D60C275A357A00C84FA5 /* SearchFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		01E5D60B2759ACE400C84FA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01E5D60C275A357A00C84FA5 /* SearchFooterView.swift */,
 				01E5D6092759ACDE00C84FA5 /* CandyHomeTableViewCell.swift */,
 			);
 			path = View;
@@ -180,6 +183,7 @@
 				01E5D6022759107A00C84FA5 /* CandyHomeViewController.swift in Sources */,
 				01E5D5EF2757A5E300C84FA5 /* SceneDelegate.swift in Sources */,
 				01E5D604275911ED00C84FA5 /* CandyDetailViewController.swift in Sources */,
+				01E5D60D275A357A00C84FA5 /* SearchFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

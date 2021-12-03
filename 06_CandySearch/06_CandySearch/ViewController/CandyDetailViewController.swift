@@ -34,9 +34,14 @@ class CandyDetailViewController: UIViewController {
         autoLayout()
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     private func setNavigationController() {
         guard let candy = candy else { return }
         navigationItem.title = candy.category
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.tintColor = .white
     }
     
