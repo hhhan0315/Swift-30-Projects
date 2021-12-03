@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		01E5D5ED2757A5E300C84FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D5EC2757A5E300C84FA5 /* AppDelegate.swift */; };
 		01E5D5EF2757A5E300C84FA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D5EE2757A5E300C84FA5 /* SceneDelegate.swift */; };
-		01E5D5F12757A5E300C84FA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D5F02757A5E300C84FA5 /* ViewController.swift */; };
-		01E5D5F42757A5E300C84FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E5D5F22757A5E300C84FA5 /* Main.storyboard */; };
 		01E5D5F62757A5E400C84FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E5D5F52757A5E400C84FA5 /* Assets.xcassets */; };
 		01E5D5F92757A5E400C84FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01E5D5F72757A5E400C84FA5 /* LaunchScreen.storyboard */; };
+		01E5D6022759107A00C84FA5 /* CandyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D6012759107A00C84FA5 /* CandyHomeViewController.swift */; };
+		01E5D604275911ED00C84FA5 /* CandyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D603275911ED00C84FA5 /* CandyDetailViewController.swift */; };
+		01E5D606275912A800C84FA5 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D605275912A800C84FA5 /* Candy.swift */; };
+		01E5D60A2759ACDE00C84FA5 /* CandyHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5D6092759ACDE00C84FA5 /* CandyHomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01E5D5E92757A5E300C84FA5 /* 06_CandySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 06_CandySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E5D5EC2757A5E300C84FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E5D5EE2757A5E300C84FA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		01E5D5F02757A5E300C84FA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		01E5D5F32757A5E300C84FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01E5D5F52757A5E400C84FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01E5D5F82757A5E400C84FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01E5D5FA2757A5E400C84FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01E5D6012759107A00C84FA5 /* CandyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyHomeViewController.swift; sourceTree = "<group>"; };
+		01E5D603275911ED00C84FA5 /* CandyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyDetailViewController.swift; sourceTree = "<group>"; };
+		01E5D605275912A800C84FA5 /* Candy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		01E5D6092759ACDE00C84FA5 /* CandyHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandyHomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		01E5D5EB2757A5E300C84FA5 /* 06_CandySearch */ = {
 			isa = PBXGroup;
 			children = (
-				01E5D5EC2757A5E300C84FA5 /* AppDelegate.swift */,
-				01E5D5EE2757A5E300C84FA5 /* SceneDelegate.swift */,
-				01E5D5F02757A5E300C84FA5 /* ViewController.swift */,
-				01E5D5F22757A5E300C84FA5 /* Main.storyboard */,
-				01E5D5F52757A5E400C84FA5 /* Assets.xcassets */,
-				01E5D5F72757A5E400C84FA5 /* LaunchScreen.storyboard */,
+				01E5D60027590F5600C84FA5 /* Supporting Files */,
+				01E5D607275912AB00C84FA5 /* Model */,
+				01E5D60B2759ACE400C84FA5 /* View */,
+				01E5D608275912B200C84FA5 /* ViewController */,
 				01E5D5FA2757A5E400C84FA5 /* Info.plist */,
 			);
 			path = 06_CandySearch;
+			sourceTree = "<group>";
+		};
+		01E5D60027590F5600C84FA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01E5D5EC2757A5E300C84FA5 /* AppDelegate.swift */,
+				01E5D5EE2757A5E300C84FA5 /* SceneDelegate.swift */,
+				01E5D5F52757A5E400C84FA5 /* Assets.xcassets */,
+				01E5D5F72757A5E400C84FA5 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01E5D607275912AB00C84FA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01E5D605275912A800C84FA5 /* Candy.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01E5D608275912B200C84FA5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				01E5D6012759107A00C84FA5 /* CandyHomeViewController.swift */,
+				01E5D603275911ED00C84FA5 /* CandyDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		01E5D60B2759ACE400C84FA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01E5D6092759ACDE00C84FA5 /* CandyHomeTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +164,6 @@
 			files = (
 				01E5D5F92757A5E400C84FA5 /* LaunchScreen.storyboard in Resources */,
 				01E5D5F62757A5E400C84FA5 /* Assets.xcassets in Resources */,
-				01E5D5F42757A5E300C84FA5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +174,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E5D5F12757A5E300C84FA5 /* ViewController.swift in Sources */,
 				01E5D5ED2757A5E300C84FA5 /* AppDelegate.swift in Sources */,
+				01E5D606275912A800C84FA5 /* Candy.swift in Sources */,
+				01E5D60A2759ACDE00C84FA5 /* CandyHomeTableViewCell.swift in Sources */,
+				01E5D6022759107A00C84FA5 /* CandyHomeViewController.swift in Sources */,
 				01E5D5EF2757A5E300C84FA5 /* SceneDelegate.swift in Sources */,
+				01E5D604275911ED00C84FA5 /* CandyDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		01E5D5F22757A5E300C84FA5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01E5D5F32757A5E300C84FA5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		01E5D5F72757A5E400C84FA5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.-6-CandySearch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.-6-CandySearch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
