@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="234" id="VVk-va-PdP" customClass="NewsTableViewCell" customModule="_8_SimpleRSSReader" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="554" height="234"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VVk-va-PdP" id="ckI-Rl-zLf">
+                <rect key="frame" x="0.0" y="0.0" width="554" height="234"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oum-BP-D1D">
+                        <rect key="frame" x="20" y="11" width="514" height="30"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mde-Et-j8c">
+                        <rect key="frame" x="20" y="49" width="514" height="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xgy-4J-7Y6">
+                        <rect key="frame" x="20" y="74" width="514" height="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oum-BP-D1D" firstAttribute="top" secondItem="ckI-Rl-zLf" secondAttribute="topMargin" id="BLG-b0-kvn"/>
+                    <constraint firstItem="Mde-Et-j8c" firstAttribute="leading" secondItem="oum-BP-D1D" secondAttribute="leading" id="FlV-jP-CuN"/>
+                    <constraint firstItem="Xgy-4J-7Y6" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ckI-Rl-zLf" secondAttribute="bottomMargin" id="Pge-qh-QTX"/>
+                    <constraint firstItem="oum-BP-D1D" firstAttribute="leading" secondItem="ckI-Rl-zLf" secondAttribute="leadingMargin" id="Pjt-cJ-gUo"/>
+                    <constraint firstItem="Xgy-4J-7Y6" firstAttribute="top" secondItem="Mde-Et-j8c" secondAttribute="bottom" constant="8" id="Qfk-KK-WJf"/>
+                    <constraint firstItem="Mde-Et-j8c" firstAttribute="top" secondItem="oum-BP-D1D" secondAttribute="bottom" constant="8" id="ggq-Vc-JOL"/>
+                    <constraint firstItem="Xgy-4J-7Y6" firstAttribute="leading" secondItem="Mde-Et-j8c" secondAttribute="leading" id="kon-0a-TGF"/>
+                    <constraint firstItem="oum-BP-D1D" firstAttribute="trailing" secondItem="ckI-Rl-zLf" secondAttribute="trailingMargin" id="mrQ-hg-Yr2"/>
+                    <constraint firstItem="Xgy-4J-7Y6" firstAttribute="trailing" secondItem="Mde-Et-j8c" secondAttribute="trailing" id="ojh-a6-FWm"/>
+                    <constraint firstItem="Mde-Et-j8c" firstAttribute="trailing" secondItem="oum-BP-D1D" secondAttribute="trailing" id="yH1-Tc-URa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentsLabel" destination="Xgy-4J-7Y6" id="JBu-1T-Pac"/>
+                <outlet property="dateLabel" destination="Mde-Et-j8c" id="lyf-Q3-Wux"/>
+                <outlet property="titleLabel" destination="oum-BP-D1D" id="qcO-fV-pQW"/>
+            </connections>
+            <point key="canvasLocation" x="195.6521739130435" y="124.55357142857142"/>
+        </tableViewCell>
+    </objects>
+</document>
