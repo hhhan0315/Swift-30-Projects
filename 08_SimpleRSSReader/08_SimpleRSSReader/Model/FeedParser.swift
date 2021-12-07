@@ -7,13 +7,6 @@
 
 import Foundation
 
-struct RSSItem {
-    var title: String
-    var updated: String
-    var content: String
-    var expandedContent: Bool = false
-}
-
 class FeedParser: NSObject, XMLParserDelegate {
     private var rssItems = [RSSItem]()
     private var currentElement = ""

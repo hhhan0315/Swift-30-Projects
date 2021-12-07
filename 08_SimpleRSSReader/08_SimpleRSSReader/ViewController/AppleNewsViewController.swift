@@ -22,6 +22,7 @@ class AppleNewsViewController: UIViewController {
     }()
     
     private var rssItems: [RSSItem]?
+    private var cellStates: [CellState]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class AppleNewsViewController: UIViewController {
         feedParser.parseFeed(url: url) { (rssItems) in
             // 파싱이 잘 끝났을 때 completionHandler 실행
             self.rssItems = rssItems
+            self.cellStates = Array(repeating: CellState.collapsed, count: rssItems.count)
 
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -88,11 +90,12 @@ extension AppleNewsViewController: UITableViewDataSource {
         
         guard let rssItems = rssItems else { return UITableViewCell() }
         let rssItem = rssItems[indexPath.row]
+        let cellState = cellStates?[indexPath.row]
         
         cell.titleLabel.text = rssItem.title
         cell.dateLabel.text = makeStringToDateToString(rssItem.updated)
         cell.contentsLabel.text = rssItem.content
-        cell.contentsLabel.numberOfLines = rssItem.expandedContent ? 0 : 1
+        cell.contentsLabel.numberOfLines = cellState == .expanded ? 0 : 2
         
         return cell
     }
@@ -103,17 +106,10 @@ extension AppleNewsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         guard let cell = tableView.cellForRow(at: indexPath) as? NewsTableViewCell else { return }
-        guard let rssItemsCopy = rssItems else { return }
-        
-        var rssItem = rssItemsCopy[indexPath.row]
-        rssItem.expandedContent = !rssItem.expandedContent
-        
-        rssItems?[indexPath.row] = rssItem
-        
+
         tableView.performBatchUpdates({
-            cell.contentsLabel.numberOfLines = rssItem.expandedContent ? 0 : 1
+            cell.contentsLabel.numberOfLines = cell.contentsLabel.numberOfLines == 2 ? 0 : 2
+            cellStates?[indexPath.row] = cell.contentsLabel.numberOfLines == 2 ? .collapsed : .expanded
         }, completion: nil)
-        
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }
