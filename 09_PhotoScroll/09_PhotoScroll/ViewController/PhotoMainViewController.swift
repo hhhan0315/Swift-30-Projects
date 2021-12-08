@@ -20,7 +20,7 @@ class PhotoMainViewController: UIViewController {
         return collectionView
     }()
     
-    private let photoImageNames = ["photo1", "photo2", "photo3", "photo4", "photo5"]
+    private let photoImageNames = ["photo1", "photo2", "photo3", "photo4", "photo5", "photo6"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

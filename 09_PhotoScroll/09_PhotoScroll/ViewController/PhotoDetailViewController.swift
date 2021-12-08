@@ -20,6 +20,11 @@ class PhotoDetailViewController: UIViewController {
         }
     }
     
+    private var topConstraint: NSLayoutConstraint?
+    private var leadingConstraint: NSLayoutConstraint?
+    private var trailingConstraint: NSLayoutConstraint?
+    private var bottomConstraint: NSLayoutConstraint?
+    
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,17 +56,24 @@ class PhotoDetailViewController: UIViewController {
     }
     
     private func autoLayout() {
+        let guide = view.safeAreaLayoutGuide
+        
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: guide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            mainImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            mainImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            mainImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            mainImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
         ])
+        
+        topConstraint = mainImageView.topAnchor.constraint(equalTo: scrollView.topAnchor)
+        leadingConstraint = mainImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor)
+        trailingConstraint = mainImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+        bottomConstraint = mainImageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
+
+        topConstraint?.isActive = true
+        leadingConstraint?.isActive = true
+        trailingConstraint?.isActive = true
+        bottomConstraint?.isActive = true
     }
 
     private func updateMinZoomScaleForSize(_ size: CGSize) {
@@ -72,10 +84,32 @@ class PhotoDetailViewController: UIViewController {
         scrollView.minimumZoomScale = minScale
         scrollView.zoomScale = minScale
     }
+    
+    // 이미지 가운데로
+    private func updateConstraintsForSize(_ size: CGSize) {
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        let navigationBarHeight = navigationController?.navigationBar.frame.height ?? 0
+        let bottomPadding = view.window?.safeAreaInsets.bottom ?? 0
+        let height = size.height - mainImageView.frame.height - statusBarHeight - navigationBarHeight - bottomPadding
+        
+        let yOffset = max(0, height / 2)
+        topConstraint?.constant = yOffset
+        bottomConstraint?.constant = yOffset
+        
+        let xOffset = max(0, (size.width - mainImageView.frame.width) / 2)
+        leadingConstraint?.constant = xOffset
+        trailingConstraint?.constant = xOffset
+        
+        view.layoutIfNeeded()
+    }
 }
 
 extension PhotoDetailViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mainImageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        updateConstraintsForSize(view.bounds.size)
     }
 }
