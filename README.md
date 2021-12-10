@@ -18,3 +18,7 @@
 |[7. PokedexGo](https://github.com/hhhan0315/Swift-30-Projects/tree/main/07_PokedexGo)|[8. SimpleRSSReader](https://github.com/hhhan0315/Swift-30-Projects/tree/main/08_SimpleRSSReader)|
 |--|--|
 |![7](https://github.com/hhhan0315/Swift-30-Projects/blob/main/07_PokedexGo/스크린샷/스크린샷1.gif)|![8](https://github.com/hhhan0315/Swift-30-Projects/blob/main/08_SimpleRSSReader/8.gif)|
+
+|[9. PhotoScroll](https://github.com/hhhan0315/Swift-30-Projects/tree/main/09_PhotoScroll)||
+|--|--|
+|![9](https://github.com/hhhan0315/Swift-30-Projects/blob/main/09_PhotoScroll/9.gif)||
