@@ -22,6 +22,7 @@ class ManagePageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
+        view.backgroundColor = .black
         
         let viewController = viewPhotoDetailController(currentIndex ?? 0)
         let viewControllers = [viewController]
@@ -54,5 +55,13 @@ extension ManagePageViewController: UIPageViewControllerDataSource {
             return viewPhotoDetailController(index + 1)
         }
         return nil
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return photoImageNames.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return currentIndex ?? 0
     }
 }

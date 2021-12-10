@@ -36,6 +36,7 @@ class PhotoDetailViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -131,6 +132,7 @@ class PhotoDetailViewController: UIViewController {
     
     private func addGesture() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard(_:))))
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(touchImageView(_:))))
     }
 
     private func adjustInsetForKeyboardShow(_ show: Bool, notification: Notification) {
@@ -154,5 +156,11 @@ class PhotoDetailViewController: UIViewController {
     
     @objc func hideKeyboard(_ sender: AnyObject) {
         textField.endEditing(true)
+    }
+    
+    @objc func touchImageView(_ sender: AnyObject) {
+        let nextVC = PhotoZoomViewController()
+        nextVC.photoImageName = self.photoImageName
+        present(nextVC, animated: true, completion: nil)
     }
 }

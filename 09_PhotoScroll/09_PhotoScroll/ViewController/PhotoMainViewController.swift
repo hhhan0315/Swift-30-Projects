@@ -62,18 +62,12 @@ extension PhotoMainViewController: UICollectionViewDataSource {
 }
 
 extension PhotoMainViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let photoImageName = photoImageNames[indexPath.row]
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
         let pageVC = ManagePageViewController()
         pageVC.photoImageNames = photoImageNames
         pageVC.currentIndex = indexPath.row
         
         navigationController?.pushViewController(pageVC, animated: true)
-        
-//        let nextVC = PhotoDetailViewController()
-//        nextVC.photoImageName = photoImageName
-//        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
