@@ -20,7 +20,7 @@ class PhotoMainViewController: UIViewController {
         return collectionView
     }()
     
-    private let photoImageNames = ["photo1", "photo2", "photo3", "photo4", "photo5"]
+    private let photoImageNames = ["photo1", "photo2", "photo3", "photo4", "photo5", "photo6"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,6 @@ class PhotoMainViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
-
 }
 
 extension PhotoMainViewController: UICollectionViewDataSource {
@@ -63,12 +62,12 @@ extension PhotoMainViewController: UICollectionViewDataSource {
 }
 
 extension PhotoMainViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoImageName = photoImageNames[indexPath.row]
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
+        let pageVC = ManagePageViewController()
+        pageVC.photoImageNames = photoImageNames
+        pageVC.currentIndex = indexPath.row
         
-        let nextVC = PhotoDetailViewController()
-        nextVC.photoImageName = photoImageName
-        navigationController?.pushViewController(nextVC, animated: true)
+        navigationController?.pushViewController(pageVC, animated: true)
     }
 }
 
