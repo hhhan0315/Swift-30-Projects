@@ -42,7 +42,6 @@ class PhotoMainViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
-
 }
 
 extension PhotoMainViewController: UICollectionViewDataSource {
@@ -64,11 +63,17 @@ extension PhotoMainViewController: UICollectionViewDataSource {
 
 extension PhotoMainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photoImageName = photoImageNames[indexPath.row]
+//        let photoImageName = photoImageNames[indexPath.row]
         
-        let nextVC = PhotoDetailViewController()
-        nextVC.photoImageName = photoImageName
-        navigationController?.pushViewController(nextVC, animated: true)
+        let pageVC = ManagePageViewController()
+        pageVC.photoImageNames = photoImageNames
+        pageVC.currentIndex = indexPath.row
+        
+        navigationController?.pushViewController(pageVC, animated: true)
+        
+//        let nextVC = PhotoDetailViewController()
+//        nextVC.photoImageName = photoImageName
+//        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 

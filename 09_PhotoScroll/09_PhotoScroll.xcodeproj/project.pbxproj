@@ -13,7 +13,10 @@
 		013F7609275F807100C020A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013F7607275F807100C020A6 /* LaunchScreen.storyboard */; };
 		013F7612275F895A00C020A6 /* PhotoMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F7611275F895A00C020A6 /* PhotoMainViewController.swift */; };
 		013F7615275F8A8000C020A6 /* PhotoMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F7614275F8A8000C020A6 /* PhotoMainCollectionViewCell.swift */; };
-		013F7618275FA76300C020A6 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F7617275FA76300C020A6 /* PhotoDetailViewController.swift */; };
+		013F7618275FA76300C020A6 /* PhotoZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F7617275FA76300C020A6 /* PhotoZoomViewController.swift */; };
+		013F761E2761E4B100C020A6 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 013F761D2761E4B100C020A6 /* Empty.xib */; };
+		013F76202761E4FD00C020A6 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013F761F2761E4FD00C020A6 /* PhotoDetailViewController.swift */; };
+		01554A992762F123006D83EF /* ManagePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01554A982762F123006D83EF /* ManagePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +28,10 @@
 		013F760A275F807100C020A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013F7611275F895A00C020A6 /* PhotoMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMainViewController.swift; sourceTree = "<group>"; };
 		013F7614275F8A8000C020A6 /* PhotoMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMainCollectionViewCell.swift; sourceTree = "<group>"; };
-		013F7617275FA76300C020A6 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		013F7617275FA76300C020A6 /* PhotoZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoZoomViewController.swift; sourceTree = "<group>"; };
+		013F761D2761E4B100C020A6 /* Empty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
+		013F761F2761E4FD00C020A6 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		01554A982762F123006D83EF /* ManagePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +87,10 @@
 			isa = PBXGroup;
 			children = (
 				013F7611275F895A00C020A6 /* PhotoMainViewController.swift */,
-				013F7617275FA76300C020A6 /* PhotoDetailViewController.swift */,
+				01554A982762F123006D83EF /* ManagePageViewController.swift */,
+				013F761F2761E4FD00C020A6 /* PhotoDetailViewController.swift */,
+				013F7617275FA76300C020A6 /* PhotoZoomViewController.swift */,
+				013F761D2761E4B100C020A6 /* Empty.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013F761E2761E4B100C020A6 /* Empty.xib in Resources */,
 				013F7609275F807100C020A6 /* LaunchScreen.storyboard in Resources */,
 				013F7606275F807100C020A6 /* Assets.xcassets in Resources */,
 			);
@@ -163,10 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				013F76202761E4FD00C020A6 /* PhotoDetailViewController.swift in Sources */,
 				013F7612275F895A00C020A6 /* PhotoMainViewController.swift in Sources */,
 				013F75FD275F806F00C020A6 /* AppDelegate.swift in Sources */,
 				013F7615275F8A8000C020A6 /* PhotoMainCollectionViewCell.swift in Sources */,
-				013F7618275FA76300C020A6 /* PhotoDetailViewController.swift in Sources */,
+				01554A992762F123006D83EF /* ManagePageViewController.swift in Sources */,
+				013F7618275FA76300C020A6 /* PhotoZoomViewController.swift in Sources */,
 				013F75FF275F806F00C020A6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
