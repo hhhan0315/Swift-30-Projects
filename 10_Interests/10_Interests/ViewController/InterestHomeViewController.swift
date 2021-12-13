@@ -123,4 +123,5 @@ extension InterestHomeViewController:  UICollectionViewDelegate {
         }
         targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
     }
+    
 }
