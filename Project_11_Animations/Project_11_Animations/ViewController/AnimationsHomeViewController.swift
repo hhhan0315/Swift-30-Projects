@@ -6,13 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
-
-struct VCPreView:PreviewProvider {
-    static var previews: some View {
-        AnimationsHomeViewController().toPreview()
-    }
-}
 
 class AnimationsHomeViewController: UIViewController {
     
@@ -26,16 +19,21 @@ class AnimationsHomeViewController: UIViewController {
         return tableView
     }()
     
-    private let animations = ["2-Color", "Simple 2D Rotation", "Multicolor", "Multi Point Position", "BezierCurve Position", "Color and Frame Change", "View Fade in", "Pop"]
+    private let animations = Animation.lists
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  view.backgroundColor = .white
+        
         navigationItem.title = "Animations"
         
         addViews()
         autoLayout()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        tableView.reloadData()
+//    }
     
     private func addViews() {
         view.addSubview(tableView)
@@ -69,7 +67,7 @@ extension AnimationsHomeViewController: UITableViewDataSource {
             fatalError()
         }
         
-        cell.textLabel?.text = animations[indexPath.row]
+        cell.textLabel?.text = animations[indexPath.row].rawValue
         cell.accessoryType = .disclosureIndicator
         
         return cell
@@ -84,16 +82,19 @@ extension AnimationsHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        let nextVC = AnimationsDetailViewController()
-        
+        let nextVC = AnimationsDetailViewController()
+        nextVC.animation = animations[indexPath.row]
+        navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(translationX: 0, y: tableView.frame.height)
-        
-        UIViewPropertyAnimator.runningPropertyAnimator(
+
+        UIView.animate(
             withDuration: 0.75,
             delay: 0.05 * Double(indexPath.row),
+            usingSpringWithDamping: 0.8,
+            initialSpringVelocity: 0,
             options: .curveEaseInOut,
             animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0)
