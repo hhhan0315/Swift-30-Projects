@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		01020CAF2768465000CDD936 /* AnimationsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsDetailViewController.swift; sourceTree = "<group>"; };
 		01020CB12768503400CDD936 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		019D74EA2767281000D2D57A /* Project_11_Animationss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_11_Animationss.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		019D74EA2767281000D2D57A /* 11_Animationss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 11_Animationss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019D74ED2767281000D2D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019D74EF2767281000D2D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		019D74F62767281200D2D57A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		019D74EB2767281000D2D57A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				019D74EA2767281000D2D57A /* Project_11_Animationss.app */,
+				019D74EA2767281000D2D57A /* 11_Animationss.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,9 +111,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		019D74E92767281000D2D57A /* Project_11_Animationss */ = {
+		019D74E92767281000D2D57A /* 11_Animationss */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "Project_11_Animationss" */;
+			buildConfigurationList = 019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "11_Animationss" */;
 			buildPhases = (
 				019D74E62767281000D2D57A /* Sources */,
 				019D74E72767281000D2D57A /* Frameworks */,
@@ -123,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = Project_11_Animationss;
+			name = 11_Animationss;
 			productName = Project_11_Animations;
-			productReference = 019D74EA2767281000D2D57A /* Project_11_Animationss.app */;
+			productReference = 019D74EA2767281000D2D57A /* 11_Animationss.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				019D74E92767281000D2D57A /* Project_11_Animationss */,
+				019D74E92767281000D2D57A /* 11_Animationss */,
 			);
 		};
 /* End PBXProject section */
@@ -367,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "Project_11_Animationss" */ = {
+		019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "11_Animationss" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				019D74FF2767281200D2D57A /* Debug */,
