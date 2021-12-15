@@ -31,9 +31,11 @@ class AnimationsDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        navigationItem.title = animation.rawValue
+        
         addViews()
         autoLayout()
-        changeImage()
+        changeImageView()
     }
     
     private func addViews() {
@@ -48,7 +50,7 @@ class AnimationsDetailViewController: UIViewController {
         ])
     }
     
-    private func changeImage() {
+    private func changeImageView() {
         switch animation {
         case .bezierCurvePosition:
             let path = UIBezierPath(
@@ -58,26 +60,23 @@ class AnimationsDetailViewController: UIViewController {
                 endAngle: .pi * 2,
                 clockwise: true
             )
-            path.stroke()
-            path.fill()
-//            let layer = CAShapeLayer()
-//            layer.path = path.cgPath
-//            layer.strokeColor
-//            layer.fillColor = UIColor.red.cgColor
-//            layer.lineWidth = 3.0
-//            view.layer.addSublayer(layer)
+            let layer = CAShapeLayer()
+            layer.path = path.cgPath
+            layer.strokeColor = UIColor.red.cgColor
+            layer.fillColor = UIColor.red.cgColor
+            imageView.layer.addSublayer(layer)
         case .viewFadeIn:
             imageView = UIImageView(image: UIImage(named: "whatsapp"))
             imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width / 2, height: view.frame.width / 2)
             imageView.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
             imageView.backgroundColor = .none
-            view.addSubview(imageView)
         default:
             imageView.backgroundColor = .red
             imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width / 2, height: view.frame.width / 2)
             imageView.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
-            view.addSubview(imageView)
         }
+        
+        view.addSubview(imageView)
     }
     
     @objc func touchAnimateButton(_ sender: UIButton) {
@@ -95,7 +94,15 @@ class AnimationsDetailViewController: UIViewController {
             moveUp(to: self.imageView.frame.height)
             
         case .bezierCurvePosition:
-            break
+            let centerPoint = self.imageView.center
+            var controlPoint1 = centerPoint
+            controlPoint1.y -= 150.0
+            var controlPoint2 = controlPoint1
+            controlPoint2.x += 20.0
+            controlPoint2.y -= 150.0
+            var endPoint = centerPoint
+            endPoint.x += 40.0
+            bezierCurvePosition(endPoint: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
             
         case .colorAndFrameChange:
             let firstFrame = self.imageView.frame.insetBy(dx: -40, dy: -40)
@@ -141,6 +148,20 @@ class AnimationsDetailViewController: UIViewController {
                 self.imageView.transform = CGAffineTransform(translationX: 0, y: 0)
             }
         }
+    }
+    
+    private func bezierCurvePosition(endPoint: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) {
+        print(endPoint, controlPoint1, controlPoint2)
+        let path = UIBezierPath()
+        path.move(to: self.imageView.center)
+        path.addCurve(to: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
+        
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        animation.path = path.cgPath
+        animation.duration = self.duration
+
+        self.imageView.layer.add(animation, forKey: "animate along path")
+        self.imageView.center = endPoint
     }
     
     private func colorFrameChange(_ firstFrame: CGRect, _ secondFrame: CGRect, _ thirdFrame: CGRect,
