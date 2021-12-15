@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "019D74E92767281000D2D57A"
-               BuildableName = "Project_11_Animationss.app"
-               BlueprintName = "Project_11_Animationss"
+               BuildableName = "11_Animationss.app"
+               BlueprintName = "11_Animationss"
                ReferencedContainer = "container:11_Animations.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "019D74E92767281000D2D57A"
-            BuildableName = "Project_11_Animationss.app"
-            BlueprintName = "Project_11_Animationss"
+            BuildableName = "11_Animationss.app"
+            BlueprintName = "11_Animationss"
             ReferencedContainer = "container:11_Animations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "019D74E92767281000D2D57A"
-            BuildableName = "Project_11_Animationss.app"
-            BlueprintName = "Project_11_Animationss"
+            BuildableName = "11_Animationss.app"
+            BlueprintName = "11_Animationss"
             ReferencedContainer = "container:11_Animations.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
