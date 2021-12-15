@@ -51,7 +51,21 @@ class AnimationsDetailViewController: UIViewController {
     private func changeImage() {
         switch animation {
         case .bezierCurvePosition:
-            break
+            let path = UIBezierPath(
+                arcCenter: CGPoint(x: view.frame.midX, y: view.frame.midY),
+                radius: 15,
+                startAngle: 0,
+                endAngle: .pi * 2,
+                clockwise: true
+            )
+            path.stroke()
+            path.fill()
+//            let layer = CAShapeLayer()
+//            layer.path = path.cgPath
+//            layer.strokeColor
+//            layer.fillColor = UIColor.red.cgColor
+//            layer.lineWidth = 3.0
+//            view.layer.addSublayer(layer)
         case .viewFadeIn:
             imageView = UIImageView(image: UIImage(named: "whatsapp"))
             imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width / 2, height: view.frame.width / 2)

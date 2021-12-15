@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		01020CAF2768465000CDD936 /* AnimationsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsDetailViewController.swift; sourceTree = "<group>"; };
 		01020CB12768503400CDD936 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		019D74EA2767281000D2D57A /* Project_11_Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_11_Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		019D74EA2767281000D2D57A /* Project_11_Animationss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_11_Animationss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		019D74ED2767281000D2D57A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		019D74EF2767281000D2D57A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		019D74F62767281200D2D57A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		019D74E12767281000D2D57A = {
 			isa = PBXGroup;
 			children = (
-				019D74EC2767281000D2D57A /* Project_11_Animations */,
+				019D74EC2767281000D2D57A /* 11_Animations */,
 				019D74EB2767281000D2D57A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,12 +62,12 @@
 		019D74EB2767281000D2D57A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				019D74EA2767281000D2D57A /* Project_11_Animations.app */,
+				019D74EA2767281000D2D57A /* Project_11_Animationss.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		019D74EC2767281000D2D57A /* Project_11_Animations */ = {
+		019D74EC2767281000D2D57A /* 11_Animations */ = {
 			isa = PBXGroup;
 			children = (
 				019D75012767284D00D2D57A /* Supporting Files */,
@@ -77,7 +77,7 @@
 				019D74FB2767281200D2D57A /* Info.plist */,
 				019D7505276732FB00D2D57A /* UIViewController+Extension.swift */,
 			);
-			path = Project_11_Animations;
+			path = 11_Animations;
 			sourceTree = "<group>";
 		};
 		019D75012767284D00D2D57A /* Supporting Files */ = {
@@ -111,9 +111,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		019D74E92767281000D2D57A /* Project_11_Animations */ = {
+		019D74E92767281000D2D57A /* Project_11_Animationss */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "Project_11_Animations" */;
+			buildConfigurationList = 019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "Project_11_Animationss" */;
 			buildPhases = (
 				019D74E62767281000D2D57A /* Sources */,
 				019D74E72767281000D2D57A /* Frameworks */,
@@ -123,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = Project_11_Animations;
+			name = Project_11_Animationss;
 			productName = Project_11_Animations;
-			productReference = 019D74EA2767281000D2D57A /* Project_11_Animations.app */;
+			productReference = 019D74EA2767281000D2D57A /* Project_11_Animationss.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +142,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 019D74E52767281000D2D57A /* Build configuration list for PBXProject "Project_11_Animations" */;
+			buildConfigurationList = 019D74E52767281000D2D57A /* Build configuration list for PBXProject "11_Animations" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -155,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				019D74E92767281000D2D57A /* Project_11_Animations */,
+				019D74E92767281000D2D57A /* Project_11_Animationss */,
 			);
 		};
 /* End PBXProject section */
@@ -324,12 +324,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WB3J5J4ZWS;
-				INFOPLIST_FILE = Project_11_Animations/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/11_Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.Project-11-Animations";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.11-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -343,12 +343,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WB3J5J4ZWS;
-				INFOPLIST_FILE = Project_11_Animations/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/11_Animations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.Project-11-Animations";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.11-Animations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -358,7 +358,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		019D74E52767281000D2D57A /* Build configuration list for PBXProject "Project_11_Animations" */ = {
+		019D74E52767281000D2D57A /* Build configuration list for PBXProject "11_Animations" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				019D74FC2767281200D2D57A /* Debug */,
@@ -367,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "Project_11_Animations" */ = {
+		019D74FE2767281200D2D57A /* Build configuration list for PBXNativeTarget "Project_11_Animationss" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				019D74FF2767281200D2D57A /* Debug */,
