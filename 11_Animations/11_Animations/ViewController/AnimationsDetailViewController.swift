@@ -151,7 +151,6 @@ class AnimationsDetailViewController: UIViewController {
     }
     
     private func bezierCurvePosition(endPoint: CGPoint, controlPoint1: CGPoint, controlPoint2: CGPoint) {
-        print(endPoint, controlPoint1, controlPoint2)
         let path = UIBezierPath()
         path.move(to: self.imageView.center)
         path.addCurve(to: endPoint, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
