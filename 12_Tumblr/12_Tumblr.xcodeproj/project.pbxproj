@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		01150A2B276B1CB400035F85 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
-		01424B8E2769E93000B4F1B3 /* Project_12_Tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project_12_Tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		01424B8E2769E93000B4F1B3 /* 12_Tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 12_Tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01424B912769E93000B4F1B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01424B932769E93000B4F1B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		01424B9A2769E93100B4F1B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		01424B8F2769E93000B4F1B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				01424B8E2769E93000B4F1B3 /* Project_12_Tumblr.app */,
+				01424B8E2769E93000B4F1B3 /* 12_Tumblr.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,7 +70,8 @@
 				01424BA62769E97400B4F1B3 /* UIViewController+Preview.swift */,
 				01424B9F2769E93100B4F1B3 /* Info.plist */,
 			);
-			path = Project_12_Tumblr;
+			name = Project_12_Tumblr;
+			path = 12_Tumblr;
 			sourceTree = "<group>";
 		};
 		01424BA52769E94000B4F1B3 /* Supporting Files */ = {
@@ -87,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		01424B8D2769E93000B4F1B3 /* Project_12_Tumblr */ = {
+		01424B8D2769E93000B4F1B3 /* 12_Tumblr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 01424BA22769E93100B4F1B3 /* Build configuration list for PBXNativeTarget "Project_12_Tumblr" */;
+			buildConfigurationList = 01424BA22769E93100B4F1B3 /* Build configuration list for PBXNativeTarget "12_Tumblr" */;
 			buildPhases = (
 				01424B8A2769E93000B4F1B3 /* Sources */,
 				01424B8B2769E93000B4F1B3 /* Frameworks */,
@@ -99,9 +100,9 @@
 			);
 			dependencies = (
 			);
-			name = Project_12_Tumblr;
+			name = 12_Tumblr;
 			productName = Project_12_Tumblr;
-			productReference = 01424B8E2769E93000B4F1B3 /* Project_12_Tumblr.app */;
+			productReference = 01424B8E2769E93000B4F1B3 /* 12_Tumblr.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 01424B892769E93000B4F1B3 /* Build configuration list for PBXProject "Project_12_Tumblr" */;
+			buildConfigurationList = 01424B892769E93000B4F1B3 /* Build configuration list for PBXProject "12_Tumblr" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				01424B8D2769E93000B4F1B3 /* Project_12_Tumblr */,
+				01424B8D2769E93000B4F1B3 /* 12_Tumblr */,
 			);
 		};
 /* End PBXProject section */
@@ -300,12 +301,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WB3J5J4ZWS;
-				INFOPLIST_FILE = Project_12_Tumblr/Info.plist;
+				INFOPLIST_FILE = 12_Tumblr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.Project-12-Tumblr";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.12-Tumblr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -319,12 +320,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WB3J5J4ZWS;
-				INFOPLIST_FILE = Project_12_Tumblr/Info.plist;
+				INFOPLIST_FILE = 12_Tumblr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.Project-12-Tumblr";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rae.12-Tumblr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -334,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		01424B892769E93000B4F1B3 /* Build configuration list for PBXProject "Project_12_Tumblr" */ = {
+		01424B892769E93000B4F1B3 /* Build configuration list for PBXProject "12_Tumblr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01424BA02769E93100B4F1B3 /* Debug */,
@@ -343,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		01424BA22769E93100B4F1B3 /* Build configuration list for PBXNativeTarget "Project_12_Tumblr" */ = {
+		01424BA22769E93100B4F1B3 /* Build configuration list for PBXNativeTarget "12_Tumblr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				01424BA32769E93100B4F1B3 /* Debug */,
