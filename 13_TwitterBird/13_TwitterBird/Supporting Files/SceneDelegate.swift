@@ -10,13 +10,45 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    let mask = CALayer()
+    let imageView = UIImageView(frame: UIScreen.main.bounds)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        guard let window = window else { return }
+        
+        imageView.image = UIImage(named: "twitterScreen")
+        window.addSubview(imageView)
+        
+        mask.contents = UIImage(named: "twitterBird")?.cgImage
+        mask.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
+        mask.position = window.center
+        imageView.layer.mask = mask
+        
+        animate()
+        
+        window.backgroundColor = .systemBlue
+        window.makeKeyAndVisible()
+        window.windowScene = windowScene
+    }
+    
+    func animate() {
+        let keyFrameAnimation = CAKeyframeAnimation(keyPath: "bounds")
+        keyFrameAnimation.duration = 1.5
+        keyFrameAnimation.delegate = self
+        
+        let initialBounds = NSValue(cgRect: mask.bounds)
+        let secondBounds = NSValue(cgRect: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let finalBounds = NSValue(cgRect: CGRect(x: 0, y: 0, width: 2000, height: 2000))
+        keyFrameAnimation.values = [initialBounds, secondBounds, finalBounds]
+        keyFrameAnimation.keyTimes = [0, 0.3, 1]
+        
+        self.mask.add(keyFrameAnimation, forKey: "bounds")
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,3 +82,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        self.imageView.layer.mask = nil
+    }
+}
