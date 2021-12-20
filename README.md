@@ -30,6 +30,6 @@
 |--|--|
 |![11](https://github.com/hhhan0315/Swift-30-Projects/blob/main/11_Animations/11.gif)|![12](https://github.com/hhhan0315/Swift-30-Projects/blob/main/12_Tumblr/Simulator%20Screen%20Recording%20-%20iPhone%2011%20-%202021-12-17%20at%2020.10.45.gif)|
 
-|[13. TwitterBird](https://github.com/hhhan0315/Swift-30-Projects/tree/main/13_TwitterBird)||
+|[13. TwitterBird](https://github.com/hhhan0315/Swift-30-Projects/tree/main/13_TwitterBird)|[14. Dots](https://github.com/hhhan0315/Swift-30-Projects/tree/main/14_Dots)|
 |--|--|
-|![13](https://github.com/hhhan0315/Swift-30-Projects/blob/main/13_TwitterBird/13.gif)||
+|![13](https://github.com/hhhan0315/Swift-30-Projects/blob/main/13_TwitterBird/13.gif)|![14](https://github.com/hhhan0315/Swift-30-Projects/blob/main/14_Dots/14.gif)|
