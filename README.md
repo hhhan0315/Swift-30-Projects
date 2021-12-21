@@ -1,5 +1,6 @@
 # Swift-30-Projects
-참고 : https://github.com/soapyigu/Swift-30-Projects
+> 참고 : https://github.com/soapyigu/Swift-30-Projects
+
 ![image](https://github.com/soapyigu/Swift-30-Projects/blob/master/Swift30Projects.png)
 
 # 개발환경
