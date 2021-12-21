@@ -34,6 +34,6 @@
 |--|--|
 |![13](https://github.com/hhhan0315/Swift-30-Projects/blob/main/13_TwitterBird/13.gif)|![14](https://github.com/hhhan0315/Swift-30-Projects/blob/main/14_Dots/14.gif)|
 
-|[15. SnapchatMenu](https://github.com/hhhan0315/Swift-30-Projects/tree/main/15_SnapchatMenu)||
+|[15. SnapchatMenu](https://github.com/hhhan0315/Swift-30-Projects/tree/main/15_SnapchatMenu)|[16. SpotifySignIn](https://github.com/hhhan0315/Swift-30-Projects/tree/main/16_SpotifySignIn)|
 |--|--|
-|![15](https://github.com/hhhan0315/Swift-30-Projects/blob/main/15_SnapchatMenu/15.gif)||
+|![15](https://github.com/hhhan0315/Swift-30-Projects/blob/main/15_SnapchatMenu/15.gif)|![16](https://github.com/hhhan0315/Swift-30-Projects/blob/main/16_SpotifySignIn/16.gif)|
