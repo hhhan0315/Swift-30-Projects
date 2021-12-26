@@ -54,8 +54,6 @@ class ImageDownloader: Operation {
         
         let address = "https://image.tmdb.org/t/p/w500\(movieRecord.posterPath)"
         guard let url = URL(string: address) else { return }
-        
-        // 동기적인 파일 다운로드
         guard let imageData = try? Data(contentsOf: url) else { return }
         
         if isCancelled { return }
