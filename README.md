@@ -41,4 +41,9 @@
 |--|--|--|
 |![14](https://github.com/hhhan0315/Swift-30-Projects/blob/main/14_Dots/14.gif)|![15](https://github.com/hhhan0315/Swift-30-Projects/blob/main/15_SnapchatMenu/15.gif)|![16](https://github.com/hhhan0315/Swift-30-Projects/blob/main/16_SpotifySignIn/16.gif)|
 
+<br>
 
+## Design Pattern
+|[17. Movies](https://github.com/hhhan0315/Swift-30-Projects/tree/main/17_Movies)||
+|--|--|
+|![17](https://github.com/hhhan0315/Swift-30-Projects/blob/main/17_Movies/17.gif)||
