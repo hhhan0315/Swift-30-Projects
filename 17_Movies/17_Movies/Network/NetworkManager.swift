@@ -12,7 +12,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     private let apiKey = "0e21e60db0a315baf24d7d45bf7c6834"
     
-    func getMovies(page: Int, completion: @escaping (Result<Movies, CustomError>) -> Void) {
+    func getPopularMovieLists(page: Int, completion: @escaping (Result<Movies, CustomError>) -> Void) {
         let address = "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=ko-KR&page=\(page)"
         
         guard let url = URL(string: address) else {
@@ -21,7 +21,6 @@ class NetworkManager {
         }
         
         let request = URLRequest(url: url)
-        
         let session = URLSession.shared
                 
         let dataTask = session.dataTask(with: request) { data, response, error in
@@ -29,9 +28,7 @@ class NetworkManager {
             
             do {
                 let movies = try JSONDecoder().decode(Movies.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(movies))
-                }
+                completion(.success(movies))
             } catch {
                 completion(.failure(.invalidData))
             }
@@ -39,6 +36,7 @@ class NetworkManager {
         
         dataTask.resume()
     }
+
 }
 
 enum CustomError: String, Error {
