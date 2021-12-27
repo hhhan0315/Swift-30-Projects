@@ -14,3 +14,16 @@ struct Album {
     var coverUrl: String
     var year: String
 }
+
+typealias AlbumData = (title: String, value: String)
+
+extension Album {
+    var tableRepresentation: [AlbumData] {
+        return [
+            ("Artist", artist),
+            ("Title", title),
+            ("Genre", genre),
+            ("Year", year),
+        ]
+    }
+}

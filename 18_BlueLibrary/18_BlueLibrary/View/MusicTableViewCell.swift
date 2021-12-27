@@ -12,7 +12,7 @@ class MusicTableViewCell: UITableViewCell {
     static let identifier = "MusicCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     }
 
     required init?(coder: NSCoder) {
