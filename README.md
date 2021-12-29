@@ -44,6 +44,6 @@
 <br>
 
 ## Design Pattern
-|[17. Movies](https://github.com/hhhan0315/Swift-30-Projects/tree/main/17_Movies)||
+|[17. Movies](https://github.com/hhhan0315/Swift-30-Projects/tree/main/17_Movies)|[18. BlueLibrary](https://github.com/hhhan0315/Swift-30-Projects/tree/main/18_BlueLibrary)|
 |--|--|
-|![17](https://github.com/hhhan0315/Swift-30-Projects/blob/main/17_Movies/17.gif)||
+|![17](https://github.com/hhhan0315/Swift-30-Projects/blob/main/17_Movies/17.gif)|![18](https://github.com/hhhan0315/Swift-30-Projects/blob/main/18_BlueLibrary/18.gif)|
