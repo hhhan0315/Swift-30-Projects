@@ -5,10 +5,14 @@
 //  Created by rae on 2021/12/27.
 //
 
-import Foundation
+import UIKit
 
 final class PersistencyManager {
     private var albums = [Album]()
+    
+    private var cache: URL {
+        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+    }
     
     init() {
         let album1 = Album(title: "strawberry moon", artist: "아이유", genre: "K-Pop",
@@ -47,5 +51,21 @@ final class PersistencyManager {
     
     func deleteAlbum(at index: Int) {
         albums.remove(at: index)
+    }
+    
+    func saveImage(_ image: UIImage, filename: String) {
+        let url = cache.appendingPathComponent(filename)
+        guard let data = image.pngData() else {
+            return
+        }
+        try? data.write(to: url)
+    }
+    
+    func getImage(with filename: String) -> UIImage? {
+        let url = cache.appendingPathComponent(filename)
+        guard let data = try? Data(contentsOf: url) else {
+            return nil
+        }
+        return UIImage(data: data)
     }
 }

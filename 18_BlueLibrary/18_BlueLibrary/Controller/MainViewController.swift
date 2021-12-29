@@ -9,7 +9,14 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-//    private let scrollView: uiscrollv
+    private lazy var horizontalScrollerView: HorizontalScrollerView = {
+        let scrollerView = HorizontalScrollerView()
+        scrollerView.translatesAutoresizingMaskIntoConstraints = false
+        scrollerView.backgroundColor = .lightGray
+        scrollerView.delegate = self
+        scrollerView.dataSource = self
+        return scrollerView
+    }()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -34,6 +41,13 @@ class MainViewController: UIViewController {
         setNavigationController()
         addViews()
         autoLayout()
+        
+        horizontalScrollerView.reload()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        horizontalScrollerView.scrollToView(at: currentAlbumIndex, animated: false)
     }
     
     private func setNavigationController() {
@@ -46,12 +60,18 @@ class MainViewController: UIViewController {
     }
     
     private func addViews() {
+        view.addSubview(horizontalScrollerView)
         view.addSubview(tableView)
     }
     
     private func autoLayout() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            horizontalScrollerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            horizontalScrollerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            horizontalScrollerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            horizontalScrollerView.heightAnchor.constraint(equalToConstant: 120.0),
+            
+            tableView.topAnchor.constraint(equalTo: horizontalScrollerView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -66,6 +86,18 @@ class MainViewController: UIViewController {
             currentAlbumData = nil
         }
         tableView.reloadData()
+    }
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        coder.encode(currentAlbumIndex, forKey: Constants.indexRestorationKey)
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        currentAlbumIndex = coder.decodeInteger(forKey: Constants.indexRestorationKey)
+        showDataForAlbum(at: currentAlbumIndex)
+        horizontalScrollerView.reload()
     }
 }
 
@@ -90,4 +122,39 @@ extension MainViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension MainViewController: HorizontalScrollerViewDelegate {
+    func horizontalScrollerView(_ horizontalScrollerView: HorizontalScrollerView, didSelectViewAt index: Int) {
+        let previousAlbumView = horizontalScrollerView.view(at: currentAlbumIndex) as! AlbumView
+        previousAlbumView.highlightAlbum(false)
+        
+        currentAlbumIndex = index
+        
+        let albumView = horizontalScrollerView.view(at: currentAlbumIndex) as! AlbumView
+        albumView.highlightAlbum(true)
+        showDataForAlbum(at: index)
+    }
+}
+
+extension MainViewController: HorizontalScrollerViewDataSource {
+    func numberOfViews(in horizontalScrollerView: HorizontalScrollerView) -> Int {
+        return allAlbums.count
+    }
+    
+    func horizontalScrollerView(_ horizontalScrollerView: HorizontalScrollerView, viewAt index: Int) -> UIView {
+        let album = allAlbums[index]
+        let albumView = AlbumView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), coverUrl: album.coverUrl)
+        if currentAlbumIndex == index {
+            albumView.highlightAlbum(true)
+        } else {
+            albumView.highlightAlbum(false)
+        }
+        return albumView
+    }
+}
+
+// MARK:- Constants
+enum Constants {
+    static let indexRestorationKey = "currentAlbumIndex"
 }

@@ -18,6 +18,8 @@
 		0175B4C22779941000446FE4 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175B4C12779941000446FE4 /* HTTPClient.swift */; };
 		0175B4C52779974A00446FE4 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175B4C42779974A00446FE4 /* LibraryAPI.swift */; };
 		0175B4C72779978F00446FE4 /* PersistencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175B4C62779978F00446FE4 /* PersistencyManager.swift */; };
+		0175B4C9277A03EF00446FE4 /* HorizontalScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175B4C8277A03EF00446FE4 /* HorizontalScrollerView.swift */; };
+		0175B4CB277B484500446FE4 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175B4CA277B484500446FE4 /* NotificationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		0175B4C12779941000446FE4 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		0175B4C42779974A00446FE4 /* LibraryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		0175B4C62779978F00446FE4 /* PersistencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistencyManager.swift; sourceTree = "<group>"; };
+		0175B4C8277A03EF00446FE4 /* HorizontalScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollerView.swift; sourceTree = "<group>"; };
+		0175B4CA277B484500446FE4 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				0175B4BE2779934100446FE4 /* Model */,
 				0175B4BB27798EA500446FE4 /* View */,
 				0175B4B827798E6400446FE4 /* Controller */,
+				0175B4CC277B484800446FE4 /* Extension */,
 				0175B4AF2779586300446FE4 /* Info.plist */,
 			);
 			path = 18_BlueLibrary;
@@ -100,6 +105,7 @@
 			children = (
 				0175B4BF2779936800446FE4 /* AlbumView.swift */,
 				0175B4B927798E9F00446FE4 /* MusicTableViewCell.swift */,
+				0175B4C8277A03EF00446FE4 /* HorizontalScrollerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +126,14 @@
 				0175B4C62779978F00446FE4 /* PersistencyManager.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		0175B4CC277B484800446FE4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0175B4CA277B484500446FE4 /* NotificationExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0175B4C02779936800446FE4 /* AlbumView.swift in Sources */,
+				0175B4CB277B484500446FE4 /* NotificationExtension.swift in Sources */,
 				0175B4B727795ABA00446FE4 /* MainViewController.swift in Sources */,
+				0175B4C9277A03EF00446FE4 /* HorizontalScrollerView.swift in Sources */,
 				0175B4C52779974A00446FE4 /* LibraryAPI.swift in Sources */,
 				0175B4A22779586100446FE4 /* AppDelegate.swift in Sources */,
 				0175B4C72779978F00446FE4 /* PersistencyManager.swift in Sources */,
