@@ -12,6 +12,10 @@
 		01A47619277C95F800EBF0CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01A47618277C95F800EBF0CC /* Assets.xcassets */; };
 		01A4761C277C95F800EBF0CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01A4761A277C95F800EBF0CC /* LaunchScreen.storyboard */; };
 		01A47625277C96D100EBF0CC /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01A47624277C96D100EBF0CC /* Photos.plist */; };
+		01A47627277CA6B400EBF0CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A47626277CA6B400EBF0CC /* MainViewController.swift */; };
+		01A47629277CAA7000EBF0CC /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A47628277CAA7000EBF0CC /* MainCollectionViewCell.swift */; };
+		01A4762D277D44DF00EBF0CC /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4762C277D44DF00EBF0CC /* Photo.swift */; };
+		01A47630277D6FE100EBF0CC /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A4762F277D6FE100EBF0CC /* PinterestLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		01A4761B277C95F800EBF0CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01A4761D277C95F800EBF0CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01A47624277C96D100EBF0CC /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
+		01A47626277CA6B400EBF0CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		01A47628277CAA7000EBF0CC /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		01A4762C277D44DF00EBF0CC /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		01A4762F277D6FE100EBF0CC /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				01A47623277C960800EBF0CC /* Supporting Files */,
+				01A4762E277D44E100EBF0CC /* Model */,
+				01A4762A277D44CF00EBF0CC /* View */,
+				01A4762B277D44D200EBF0CC /* Controller */,
+				01A47631277D8F5300EBF0CC /* Layout */,
 				01A4761D277C95F800EBF0CC /* Info.plist */,
 				01A47624277C96D100EBF0CC /* Photos.plist */,
 			);
@@ -70,6 +82,38 @@
 				01A4761A277C95F800EBF0CC /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01A4762A277D44CF00EBF0CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01A47628277CAA7000EBF0CC /* MainCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01A4762B277D44D200EBF0CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01A47626277CA6B400EBF0CC /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		01A4762E277D44E100EBF0CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01A4762C277D44DF00EBF0CC /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01A47631277D8F5300EBF0CC /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				01A4762F277D6FE100EBF0CC /* PinterestLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A47630277D6FE100EBF0CC /* PinterestLayout.swift in Sources */,
+				01A47627277CA6B400EBF0CC /* MainViewController.swift in Sources */,
 				01A47610277C95F700EBF0CC /* AppDelegate.swift in Sources */,
 				01A47612277C95F700EBF0CC /* SceneDelegate.swift in Sources */,
+				01A47629277CAA7000EBF0CC /* MainCollectionViewCell.swift in Sources */,
+				01A4762D277D44DF00EBF0CC /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
